@@ -105,12 +105,13 @@ def prettify(moves):
     for move in moves:
         movement = ''
         movement += chr(ord('a') + move[0])
-        movement += str(move[1]-1)
+        movement += str((8 - move[1]))
         output.append(movement)
     return output
 
 board = Board(0)
 movement = board.get_moves(4, 6)
+board.move([4, 6], movement[0])
 print(movement)
 print(prettify(movement))
 print(board)
